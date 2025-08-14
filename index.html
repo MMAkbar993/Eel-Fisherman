@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pescatore d'Anguille - Marco Bonandin</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-fish"></i>
+                    <div class="logo-text">Pescatore d'Anguille</div>
+                </div>
+                <div class="contact-info">
+                    <p><strong>Marco Bonandin</strong></p>
+                    <p>Via del Mare 45, 45018 Porto Tolle</p>
+                    <p>P.IVA: 00830120291</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Anguille Fresche del Delta del Po</h1>
+            <p>Selvatiche e di allevamento, direttamente dal pescatore</p>
+            <p><i class="fas fa-award"></i> Qualità garantita dal 1985</p>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">I Nostri Prodotti</h2>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <!-- <i class="fas fa-fish"></i> -->
+                         <img src="./images/ang selv.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <div class="wild-badge">SELVATICA</div>
+                        <h3 class="product-title">Anguilla Selvatica Viva</h3>
+                        <p class="product-type">Mar Mediterraneo</p>
+                        <div class="product-details">
+                            <p><i class="fas fa-box"></i> Cassa da 3 Kg</p>
+                            <p><i class="fas fa-water"></i> Pescata in mare</p>
+                            <p><i class="fas fa-leaf"></i> Fresca e viva</p>
+                        </div>
+                        <div class="price">€25,00/Kg + IVA 10%</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Anguilla Selvatica Viva - Mar Mediterraneo - Cassa da 3Kg - €25,00/Kg + IVA 10%')">
+                            <i class="fab fa-whatsapp"></i>
+                            Ordina su WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <!-- <i class="fas fa-fish"></i> -->
+                         <img src="./images/angu allevate.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <div class="wild-badge">SELVATICO</div>
+                        <h3 class="product-title">Buratello Selvatico</h3>
+                        <p class="product-type">Anguilla giovane</p>
+                        <div class="product-details">
+                            <p><i class="fas fa-box"></i> Cassa da 3 Kg</p>
+                            <p><i class="fas fa-water"></i> Pescato in natura</p>
+                            <p><i class="fas fa-star"></i> Qualità premium</p>
+                        </div>
+                        <div class="price">€22,00 + IVA 10%</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Buratello Selvatico - Cassa da 3Kg - €22,00 + IVA 10%')">
+                            <i class="fab fa-whatsapp"></i>
+                            Ordina su WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <!-- <i class="fas fa-cut"></i>
+                          -->
+                        <img src="./images/Anguilla.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <div class="wild-badge">SELVATICA</div>
+                        <h3 class="product-title">Anguilla Selvatica Sfilettata</h3>
+                        <p class="product-type">Pronta per la cottura</p>
+                        <div class="product-details">
+                            <p><i class="fas fa-box"></i> Cassa da 3 Kg</p>
+                            <p><i class="fas fa-cut"></i> Sfilettata fresca</p>
+                            <p><i class="fas fa-clock"></i> Pronta all'uso</p>
+                        </div>
+                        <div class="price">€26,00 + IVA</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Anguilla Selvatica Sfilettata - Cassa da 3Kg - €26,00 + IVA')">
+                            <i class="fab fa-whatsapp"></i>
+                             
+                            Ordina su WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <!-- <i class="fas fa-fish"></i> -->
+                         <img src="./images/anguille.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <div class="farmed-badge">ALLEVAMENTO</div>
+                        <h3 class="product-title">Anguilla Allevata Europa Viva</h3>
+                        <p class="product-type">Allevamento europeo</p>
+                        <div class="product-details">
+                            <p><i class="fas fa-box"></i> Cassa da 3 Kg</p>
+                            <p><i class="fas fa-certificate"></i> Certificata UE</p>
+                            <p><i class="fas fa-leaf"></i> Fresca e viva</p>
+                        </div>
+                        <div class="price">€25,00/Kg</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Anguilla Allevata Europa Viva - Cassa da 3Kg - €25,00/Kg')">
+                            <i class="fab fa-whatsapp"></i>
+                             
+                            Ordina su WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <!-- <i class="fas fa-fish"></i> -->
+                         <img src="./images/angu allevate.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <div class="farmed-badge">ALLEVAMENTO</div>
+                        <h3 class="product-title">Buratello Vivo Allevato Europa</h3>
+                        <p class="product-type">Anguilla giovane d'allevamento</p>
+                        <div class="product-details">
+                            <p><i class="fas fa-box"></i> Cassa da 3 Kg</p>
+                            <p><i class="fas fa-certificate"></i> Allevamento UE</p>
+                            <p><i class="fas fa-heart"></i> Qualità controllata</p>
+                        </div>
+                        <div class="price">€22,00/Kg</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Buratello Vivo Allevato Europa - Cassa da 3Kg - €22,00/Kg')">
+                            <i class="fab fa-whatsapp"></i>
+                            Ordina su WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <!-- <i class="fas fa-cut"></i>?-->
+                         <img src="./images/ang selv.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <div class="farmed-badge">ALLEVAMENTO</div>
+                        <h3 class="product-title">Anguilla Allevata Europa Sfilettata</h3>
+                        <p class="product-type">Pronta per la cottura</p>
+                        <div class="product-details">
+                            <p><i class="fas fa-box"></i> Cassa da 3 Kg</p>
+                            <p><i class="fas fa-cut"></i> Sfilettata fresca</p>
+                            <p><i class="fas fa-clock"></i> Pronta all'uso</p>
+                        </div>
+                        <div class="price">€26,00</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Anguilla Allevata Europa Sfilettata - Cassa da 3Kg - €26,00')">
+                            <i class="fab fa-whatsapp"></i>
+                            Ordina su WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-fish"></i> Pescatore d'Anguille</h3>
+                    <p>Tradizione e qualità dal Delta del Po</p>
+                    <p>Anguille fresche selvatiche e d'allevamento</p>
+                </div>
+                <div class="footer-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Contatti</h3>
+                    <p><strong>Marco Bonandin</strong></p>
+                    <p>Via del Mare 45</p>
+                    <p>45018 Porto Tolle (RO)</p>
+                    <p>P.IVA: 00830120291</p>
+                </div>
+                <div class="footer-section">
+                    <h3><i class="fas fa-info-circle"></i> Informazioni</h3>
+                    <p>Vendita solo all'ingrosso</p>
+                    <p>Ordini tramite WhatsApp</p>
+                    <p>Consegna in tutta Italia</p>
+                    <p>Prodotto fresco garantito</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Pescatore d'Anguille - Marco Bonandin. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+   <script src="./js/script.js"></script>
+</body>
+</html>
