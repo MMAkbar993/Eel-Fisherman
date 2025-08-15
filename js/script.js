@@ -1,6 +1,7 @@
 
 function sendWhatsApp(productInfo) {
-    const phoneNumber = '393331234567'; // Sostituisci con il tuo numero WhatsApp
+    // <CHANGE> Updated WhatsApp number to the provided one
+    const phoneNumber = '393284506645';
     const message = `Ciao Marco, sono interessato a:\n\n${productInfo}\n\nPotresti darmi maggiori informazioni su disponibilità e consegna?\n\nGrazie!`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

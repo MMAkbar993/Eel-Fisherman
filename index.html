@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pescatore d'Anguille - Marco Bonandin</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-fish"></i>
+                    <!-- <CHANGE> Replaced fish icon with custom eel SVG logo -->
+                    <svg class="eel-logo" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10,40 Q20,20 40,25 Q60,30 80,35 Q100,40 110,45 Q105,50 90,48 Q70,45 50,42 Q30,38 20,50 Q15,55 10,40 Z" />
+                        <circle cx="25" cy="35" r="2" fill="white" />
+                        <path d="M85,35 Q95,30 105,35 Q100,45 90,40 Q85,38 85,35 Z" opacity="0.7" />
+                    </svg>
+                    <!-- <img src="./images/59212.jpg" class="eel-logo" alt=""> -->
                     <div class="logo-text">Pescatore d'Anguille</div>
                 </div>
                 <div class="contact-info">
@@ -26,7 +35,8 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Anguille Fresche del Delta del Po</h1>
+            <!-- <CHANGE> Removed "del Delta del Po" reference -->
+            <h1>Anguille Fresche d'Europa</h1>
             <p>Selvatiche e di allevamento, direttamente dal pescatore</p>
             <p><i class="fas fa-award"></i> Qualità garantita dal 1985</p>
         </div>
@@ -35,13 +45,12 @@
     <section class="products-section">
         <div class="container">
             <h2 class="section-title">I Nostri Prodotti</h2>
-            
+
             <div class="products-grid">
                 <!-- Product 1 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <!-- <i class="fas fa-fish"></i> -->
-                         <img src="./images/ang selv.png" alt="">
+                        <img src="./images/ang selv.png" alt="">
                     </div>
                     <div class="product-info">
                         <div class="wild-badge">SELVATICA</div>
@@ -53,7 +62,8 @@
                             <p><i class="fas fa-leaf"></i> Fresca e viva</p>
                         </div>
                         <div class="price">€25,00/Kg + IVA 10%</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Anguilla Selvatica Viva - Mar Mediterraneo - Cassa da 3Kg - €25,00/Kg + IVA 10%')">
+                        <a href="#" class="whatsapp-btn"
+                            onclick="sendWhatsApp('Anguilla Selvatica Viva - Mar Mediterraneo - Cassa da 3Kg - €25,00/Kg + IVA 10%')">
                             <i class="fab fa-whatsapp"></i>
                             Ordina su WhatsApp
                         </a>
@@ -63,8 +73,7 @@
                 <!-- Product 2 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <!-- <i class="fas fa-fish"></i> -->
-                         <img src="./images/angu allevate.png" alt="">
+                        <img src="./images/angu allevate.png" alt="">
                     </div>
                     <div class="product-info">
                         <div class="wild-badge">SELVATICO</div>
@@ -76,7 +85,8 @@
                             <p><i class="fas fa-star"></i> Qualità premium</p>
                         </div>
                         <div class="price">€22,00 + IVA 10%</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Buratello Selvatico - Cassa da 3Kg - €22,00 + IVA 10%')">
+                        <a href="#" class="whatsapp-btn"
+                            onclick="sendWhatsApp('Buratello Selvatico - Cassa da 3Kg - €22,00 + IVA 10%')">
                             <i class="fab fa-whatsapp"></i>
                             Ordina su WhatsApp
                         </a>
@@ -86,8 +96,6 @@
                 <!-- Product 3 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <!-- <i class="fas fa-cut"></i>
-                          -->
                         <img src="./images/Anguilla.png" alt="">
                     </div>
                     <div class="product-info">
@@ -100,9 +108,9 @@
                             <p><i class="fas fa-clock"></i> Pronta all'uso</p>
                         </div>
                         <div class="price">€26,00 + IVA</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Anguilla Selvatica Sfilettata - Cassa da 3Kg - €26,00 + IVA')">
+                        <a href="#" class="whatsapp-btn"
+                            onclick="sendWhatsApp('Anguilla Selvatica Sfilettata - Cassa da 3Kg - €26,00 + IVA')">
                             <i class="fab fa-whatsapp"></i>
-                             
                             Ordina su WhatsApp
                         </a>
                     </div>
@@ -111,8 +119,7 @@
                 <!-- Product 4 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <!-- <i class="fas fa-fish"></i> -->
-                         <img src="./images/anguille.png" alt="">
+                        <img src="./images/anguille.png" alt="">
                     </div>
                     <div class="product-info">
                         <div class="farmed-badge">ALLEVAMENTO</div>
@@ -124,9 +131,9 @@
                             <p><i class="fas fa-leaf"></i> Fresca e viva</p>
                         </div>
                         <div class="price">€25,00/Kg</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Anguilla Allevata Europa Viva - Cassa da 3Kg - €25,00/Kg')">
+                        <a href="#" class="whatsapp-btn"
+                            onclick="sendWhatsApp('Anguilla Allevata Europa Viva - Cassa da 3Kg - €25,00/Kg')">
                             <i class="fab fa-whatsapp"></i>
-                             
                             Ordina su WhatsApp
                         </a>
                     </div>
@@ -135,8 +142,7 @@
                 <!-- Product 5 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <!-- <i class="fas fa-fish"></i> -->
-                         <img src="./images/angu allevate.png" alt="">
+                        <img src="./images/angu allevate.png" alt="">
                     </div>
                     <div class="product-info">
                         <div class="farmed-badge">ALLEVAMENTO</div>
@@ -148,7 +154,8 @@
                             <p><i class="fas fa-heart"></i> Qualità controllata</p>
                         </div>
                         <div class="price">€22,00/Kg</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Buratello Vivo Allevato Europa - Cassa da 3Kg - €22,00/Kg')">
+                        <a href="#" class="whatsapp-btn"
+                            onclick="sendWhatsApp('Buratello Vivo Allevato Europa - Cassa da 3Kg - €22,00/Kg')">
                             <i class="fab fa-whatsapp"></i>
                             Ordina su WhatsApp
                         </a>
@@ -158,8 +165,7 @@
                 <!-- Product 6 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <!-- <i class="fas fa-cut"></i>?-->
-                         <img src="./images/ang selv.png" alt="">
+                        <img src="./images/ang selv.png" alt="">
                     </div>
                     <div class="product-info">
                         <div class="farmed-badge">ALLEVAMENTO</div>
@@ -171,7 +177,8 @@
                             <p><i class="fas fa-clock"></i> Pronta all'uso</p>
                         </div>
                         <div class="price">€26,00</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendWhatsApp('Anguilla Allevata Europa Sfilettata - Cassa da 3Kg - €26,00')">
+                        <a href="#" class="whatsapp-btn"
+                            onclick="sendWhatsApp('Anguilla Allevata Europa Sfilettata - Cassa da 3Kg - €26,00')">
                             <i class="fab fa-whatsapp"></i>
                             Ordina su WhatsApp
                         </a>
@@ -186,7 +193,8 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3><i class="fas fa-fish"></i> Pescatore d'Anguille</h3>
-                    <p>Tradizione e qualità dal Delta del Po</p>
+                    <!-- <CHANGE> Removed "dal Delta del Po" reference -->
+                    <p>Tradizione e qualità europea</p>
                     <p>Anguille fresche selvatiche e d'allevamento</p>
                 </div>
                 <div class="footer-section">
@@ -208,6 +216,7 @@
         </div>
     </footer>
 
-   <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
