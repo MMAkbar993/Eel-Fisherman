@@ -10,18 +10,66 @@
 </head>
 
 <body>
+    <!-- Added GDPR cookie consent banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h3><i class="fas fa-cookie-bite"></i> Informativa sui Cookie</h3>
+                <p>Questo sito utilizza cookie tecnici necessari per il funzionamento e cookie di terze parti per migliorare l'esperienza utente. Continuando la navigazione accetti l'utilizzo dei cookie.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="acceptAll" class="cookie-btn accept">Accetta Tutti</button>
+                <button id="acceptNecessary" class="cookie-btn necessary">Solo Necessari</button>
+                <button id="cookieSettings" class="cookie-btn settings">Impostazioni</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Added cookie settings modal -->
+    <div id="cookieModal" class="cookie-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Impostazioni Cookie</h2>
+                <button id="closeModal" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <h3>Cookie Necessari</h3>
+                        <label class="switch">
+                            <input type="checkbox" id="necessaryCookies" checked disabled>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <p>Questi cookie sono essenziali per il funzionamento del sito web e non possono essere disabilitati.</p>
+                </div>
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <h3>Cookie di Terze Parti</h3>
+                        <label class="switch">
+                            <input type="checkbox" id="thirdPartyCookies">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <p>Cookie utilizzati da servizi esterni come WhatsApp e Font Awesome per migliorare l'esperienza utente.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="saveSettings" class="cookie-btn accept">Salva Impostazioni</button>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <!-- <CHANGE> Replaced fish icon with custom eel SVG logo -->
                     <svg class="eel-logo" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M10,40 Q20,20 40,25 Q60,30 80,35 Q100,40 110,45 Q105,50 90,48 Q70,45 50,42 Q30,38 20,50 Q15,55 10,40 Z" />
                         <circle cx="25" cy="35" r="2" fill="white" />
                         <path d="M85,35 Q95,30 105,35 Q100,45 90,40 Q85,38 85,35 Z" opacity="0.7" />
                     </svg>
-                    <!-- <img src="./images/59212.jpg" class="eel-logo" alt=""> -->
                     <div class="logo-text">Pescatore d'Anguille</div>
                 </div>
                 <div class="contact-info">
@@ -35,7 +83,7 @@
 
     <section class="hero">
         <div class="container">
-            <!-- <CHANGE> Removed "del Delta del Po" reference -->
+            <!-- Removed "del Delta del Po" reference -->
             <h1>Anguille Fresche d'Europa</h1>
             <p>Selvatiche e di allevamento, direttamente dal pescatore</p>
             <p><i class="fas fa-award"></i> Qualità garantita dal 1985</p>
@@ -48,7 +96,7 @@
 
             <div class="products-grid">
                 <!-- Product 1 -->
-                <div class="product-card">
+                <div class="product-card" onclick="openProductDetail(1)">
                     <div class="product-image">
                         <img src="./images/ang selv.png" alt="">
                     </div>
@@ -62,16 +110,11 @@
                             <p><i class="fas fa-leaf"></i> Fresca e viva</p>
                         </div>
                         <div class="price">€25,00/Kg + IVA 10%</div>
-                        <a href="#" class="whatsapp-btn"
-                            onclick="sendWhatsApp('Anguilla Selvatica Viva - Mar Mediterraneo - Cassa da 3Kg - €25,00/Kg + IVA 10%')">
-                            <i class="fab fa-whatsapp"></i>
-                            Ordina su WhatsApp
-                        </a>
                     </div>
                 </div>
 
                 <!-- Product 2 -->
-                <div class="product-card">
+                <div class="product-card" onclick="openProductDetail(2)">
                     <div class="product-image">
                         <img src="./images/angu allevate.png" alt="">
                     </div>
@@ -85,18 +128,13 @@
                             <p><i class="fas fa-star"></i> Qualità premium</p>
                         </div>
                         <div class="price">€22,00 + IVA 10%</div>
-                        <a href="#" class="whatsapp-btn"
-                            onclick="sendWhatsApp('Buratello Selvatico - Cassa da 3Kg - €22,00 + IVA 10%')">
-                            <i class="fab fa-whatsapp"></i>
-                            Ordina su WhatsApp
-                        </a>
                     </div>
                 </div>
 
                 <!-- Product 3 -->
-                <div class="product-card">
+                <div class="product-card" onclick="openProductDetail(3)">
                     <div class="product-image">
-                        <img src="./images/Anguilla.png" alt="">
+                        <img src="./images/1000123052 (1).jpg" alt="">
                     </div>
                     <div class="product-info">
                         <div class="wild-badge">SELVATICA</div>
@@ -108,16 +146,11 @@
                             <p><i class="fas fa-clock"></i> Pronta all'uso</p>
                         </div>
                         <div class="price">€26,00 + IVA</div>
-                        <a href="#" class="whatsapp-btn"
-                            onclick="sendWhatsApp('Anguilla Selvatica Sfilettata - Cassa da 3Kg - €26,00 + IVA')">
-                            <i class="fab fa-whatsapp"></i>
-                            Ordina su WhatsApp
-                        </a>
                     </div>
                 </div>
 
                 <!-- Product 4 -->
-                <div class="product-card">
+                <div class="product-card" onclick="openProductDetail(4)">
                     <div class="product-image">
                         <img src="./images/anguille.png" alt="">
                     </div>
@@ -131,18 +164,13 @@
                             <p><i class="fas fa-leaf"></i> Fresca e viva</p>
                         </div>
                         <div class="price">€25,00/Kg</div>
-                        <a href="#" class="whatsapp-btn"
-                            onclick="sendWhatsApp('Anguilla Allevata Europa Viva - Cassa da 3Kg - €25,00/Kg')">
-                            <i class="fab fa-whatsapp"></i>
-                            Ordina su WhatsApp
-                        </a>
                     </div>
                 </div>
 
                 <!-- Product 5 -->
-                <div class="product-card">
+                <div class="product-card" onclick="openProductDetail(5)">
                     <div class="product-image">
-                        <img src="./images/angu allevate.png" alt="">
+                        <img src="./images/Anguilla.png" alt="">
                     </div>
                     <div class="product-info">
                         <div class="farmed-badge">ALLEVAMENTO</div>
@@ -154,18 +182,13 @@
                             <p><i class="fas fa-heart"></i> Qualità controllata</p>
                         </div>
                         <div class="price">€22,00/Kg</div>
-                        <a href="#" class="whatsapp-btn"
-                            onclick="sendWhatsApp('Buratello Vivo Allevato Europa - Cassa da 3Kg - €22,00/Kg')">
-                            <i class="fab fa-whatsapp"></i>
-                            Ordina su WhatsApp
-                        </a>
                     </div>
                 </div>
 
                 <!-- Product 6 -->
-                <div class="product-card">
+                <div class="product-card" onclick="openProductDetail(6)">
                     <div class="product-image">
-                        <img src="./images/ang selv.png" alt="">
+                        <img src="./images/1000123052 (1).jpg" alt="">
                     </div>
                     <div class="product-info">
                         <div class="farmed-badge">ALLEVAMENTO</div>
@@ -177,11 +200,6 @@
                             <p><i class="fas fa-clock"></i> Pronta all'uso</p>
                         </div>
                         <div class="price">€26,00</div>
-                        <a href="#" class="whatsapp-btn"
-                            onclick="sendWhatsApp('Anguilla Allevata Europa Sfilettata - Cassa da 3Kg - €26,00')">
-                            <i class="fab fa-whatsapp"></i>
-                            Ordina su WhatsApp
-                        </a>
                     </div>
                 </div>
             </div>
@@ -193,7 +211,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3><i class="fas fa-fish"></i> Pescatore d'Anguille</h3>
-                    <!-- <CHANGE> Removed "dal Delta del Po" reference -->
+                    <!-- Removed "dal Delta del Po" reference -->
                     <p>Tradizione e qualità europea</p>
                     <p>Anguille fresche selvatiche e d'allevamento</p>
                 </div>
@@ -211,10 +229,166 @@
                     <p>Consegna in tutta Italia</p>
                     <p>Prodotto fresco garantito</p>
                 </div>
+                <!-- Added GDPR compliance links -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-shield-alt"></i> Privacy & GDPR</h3>
+                    <p><a href="#" onclick="showPrivacyPolicy()">Informativa Privacy</a></p>
+                    <p><a href="#" onclick="showCookieSettings()">Gestione Cookie</a></p>
+                    <p><a href="#" onclick="showDataRights()">I Tuoi Diritti</a></p>
+                    <p>Conforme al GDPR (UE) 2016/679</p>
+                </div>
             </div>
             <p>&copy; 2025 Pescatore d'Anguille - Marco Bonandin. Tutti i diritti riservati.</p>
         </div>
     </footer>
+
+    <!-- Added privacy policy modal -->
+    <div id="privacyModal" class="privacy-modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2>Informativa sulla Privacy</h2>
+                <button onclick="closePrivacyModal()" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>1. Titolare del Trattamento</h3>
+                <p><strong>Marco Bonandin</strong><br>
+                Via del Mare 45, 45018 Porto Tolle (RO)<br>
+                P.IVA: 00830120291</p>
+
+                <h3>2. Dati Raccolti</h3>
+                <p>Raccogliamo i seguenti dati personali:</p>
+                <ul>
+                    <li>Informazioni di contatto fornite volontariamente tramite WhatsApp</li>
+                    <li>Dati di navigazione (cookie tecnici)</li>
+                    <li>Indirizzo IP per finalità di sicurezza</li>
+                </ul>
+
+                <h3>3. Finalità del Trattamento</h3>
+                <p>I dati vengono trattati per:</p>
+                <ul>
+                    <li>Gestione degli ordini e comunicazioni commerciali</li>
+                    <li>Funzionamento tecnico del sito web</li>
+                    <li>Adempimento di obblighi legali (art. 6.1.c GDPR)</li>
+                </ul>
+
+                <h3>4. Base Giuridica</h3>
+                <p>Il trattamento è basato su:</p>
+                <ul>
+                    <li>Consenso dell'interessato (art. 6.1.a GDPR)</li>
+                    <li>Esecuzione di un contratto (art. 6.1.b GDPR)</li>
+                    <li>Adempimento di obblighi legali (art. 6.1.c GDPR)</li>
+                </ul>
+
+                <h3>5. I Tuoi Diritti</h3>
+                <p>Hai diritto a:</p>
+                <ul>
+                    <li>Accesso ai tuoi dati personali</li>
+                    <li>Rettifica di dati inesatti</li>
+                    <li>Cancellazione dei dati</li>
+                    <li>Limitazione del trattamento</li>
+                    <li>Portabilità dei dati</li>
+                    <li>Opposizione al trattamento</li>
+                </ul>
+
+                <h3>6. Conservazione</h3>
+                <p>I dati vengono conservati per il tempo necessario alle finalità del trattamento e secondo gli obblighi di legge.</p>
+
+                <h3>7. Contatti</h3>
+                <p>Per esercitare i tuoi diritti contatta: <strong>Marco Bonandin</strong> tramite WhatsApp al numero presente sul sito.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Added data rights modal -->
+    <div id="dataRightsModal" class="privacy-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>I Tuoi Diritti GDPR</h2>
+                <button onclick="closeDataRightsModal()" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="rights-grid">
+                    <div class="right-item">
+                        <h4><i class="fas fa-eye"></i> Diritto di Accesso</h4>
+                        <p>Puoi richiedere una copia dei tuoi dati personali che trattiamo.</p>
+                    </div>
+                    <div class="right-item">
+                        <h4><i class="fas fa-edit"></i> Diritto di Rettifica</h4>
+                        <p>Puoi richiedere la correzione di dati personali inesatti o incompleti.</p>
+                    </div>
+                    <div class="right-item">
+                        <h4><i class="fas fa-trash"></i> Diritto alla Cancellazione</h4>
+                        <p>Puoi richiedere la cancellazione dei tuoi dati personali in determinate circostanze.</p>
+                    </div>
+                    <div class="right-item">
+                        <h4><i class="fas fa-pause"></i> Diritto di Limitazione</h4>
+                        <p>Puoi richiedere la limitazione del trattamento dei tuoi dati.</p>
+                    </div>
+                    <div class="right-item">
+                        <h4><i class="fas fa-download"></i> Diritto alla Portabilità</h4>
+                        <p>Puoi richiedere i tuoi dati in formato strutturato e leggibile.</p>
+                    </div>
+                    <div class="right-item">
+                        <h4><i class="fas fa-ban"></i> Diritto di Opposizione</h4>
+                        <p>Puoi opporti al trattamento dei tuoi dati per motivi legittimi.</p>
+                    </div>
+                </div>
+                <div class="contact-rights">
+                    <h4>Come Esercitare i Tuoi Diritti</h4>
+                    <p>Contatta <strong>Marco Bonandin</strong> tramite WhatsApp per esercitare qualsiasi diritto. Risponderemo entro 30 giorni dalla richiesta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Added product detail modal overlay -->
+    <div id="productDetailModal" class="product-detail-modal">
+        <div class="product-detail-content">
+            <div class="product-detail-header">
+                <button id="closeProductDetail" class="close-product-detail">&times;</button>
+            </div>
+            <div class="product-detail-body">
+                <div class="product-detail-image">
+                    <img id="detailImage" src="/placeholder.svg" alt="">
+                </div>
+                <div class="product-detail-info">
+                    <div id="detailBadge" class="product-badge"></div>
+                    <h2 id="detailTitle" class="product-detail-title"></h2>
+                    <p id="detailType" class="product-detail-type"></p>
+                    
+                    <div class="product-detail-description">
+                        <h3><i class="fas fa-info-circle"></i> Descrizione Prodotto</h3>
+                        <p id="detailDescription"></p>
+                    </div>
+
+                    <div class="product-detail-features">
+                        <h3><i class="fas fa-check-circle"></i> Caratteristiche</h3>
+                        <div id="detailFeatures" class="features-list"></div>
+                    </div>
+
+                    <div class="product-detail-specs">
+                        <h3><i class="fas fa-clipboard-list"></i> Specifiche</h3>
+                        <div id="detailSpecs" class="specs-list"></div>
+                    </div>
+
+                    <div class="product-detail-price">
+                        <span id="detailPrice" class="price-large"></span>
+                    </div>
+
+                    <div class="product-detail-actions">
+                        <button id="detailWhatsAppBtn" class="whatsapp-btn-large">
+                            <i class="fab fa-whatsapp"></i>
+                            Ordina su WhatsApp
+                        </button>
+                        <button onclick="closeProductDetail()" class="back-btn">
+                            <i class="fas fa-arrow-left"></i>
+                            Torna ai Prodotti
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="./js/script.js"></script>
 </body>
