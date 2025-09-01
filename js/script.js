@@ -344,57 +344,21 @@ const productData = {
 }
 
 function openProductDetail(productId) {
-  const product = productData[productId]
-  if (!product) return
-
-  // Populate modal with product data
-  document.getElementById("detailImage").src = product.image
-  document.getElementById("detailImage").alt = product.title
-  document.getElementById("detailBadge").textContent = product.badge
-  document.getElementById("detailBadge").className = `product-badge ${product.badgeClass}`
-  document.getElementById("detailTitle").textContent = product.title
-  document.getElementById("detailType").textContent = product.type
-  document.getElementById("detailDescription").textContent = product.description
-  document.getElementById("detailPrice").textContent = product.price
-
-  // Populate features
-  const featuresContainer = document.getElementById("detailFeatures")
-  featuresContainer.innerHTML = product.features
-    .map((feature) => `<div class="feature-item"><i class="fas fa-check"></i> ${feature}</div>`)
-    .join("")
-
-  // Populate specs
-  const specsContainer = document.getElementById("detailSpecs")
-  specsContainer.innerHTML = product.specs
-    .map((spec) => `<div class="spec-item"><i class="fas fa-info"></i> ${spec}</div>`)
-    .join("")
-
-  // Set WhatsApp button action
-  const whatsappBtn = document.getElementById("detailWhatsAppBtn")
-  whatsappBtn.onclick = () => sendWhatsApp(product.whatsappText)
-
-  // Show modal
-  document.getElementById("productDetailModal").classList.add("show")
-  document.body.style.overflow = "hidden" // Prevent background scrolling
+  // Navigate to the specific product page
+  window.location.href = `product-${productId}.html`
 }
 
-function closeProductDetail() {
-  document.getElementById("productDetailModal").classList.remove("show")
-  document.body.style.overflow = "auto" // Restore scrolling
-}
-
-document.getElementById("closeProductDetail").addEventListener("click", closeProductDetail)
-
-// Close modal when clicking outside
-document.getElementById("productDetailModal").addEventListener("click", function (e) {
-  if (e.target === this) {
-    closeProductDetail()
+// Close modals when clicking outside
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("privacy-modal") || e.target.classList.contains("cookie-modal")) {
+    e.target.classList.remove("show")
   }
 })
 
 // Close modal with Escape key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    closeProductDetail()
+    closePrivacyModal()
+    closeDataRightsModal()
   }
 })
