@@ -1182,3 +1182,7 @@ footer {
     font-size: 0.8rem;
   }
 }
+
+.products-grid a{
+  text-decoration: none;
+}

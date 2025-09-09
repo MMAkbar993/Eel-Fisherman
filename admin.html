@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Pescatore d'Anguille</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <div class="header-content">
+                <h1><i class="fas fa-cog"></i> Pannello Amministratore</h1>
+                <div class="header-actions">
+                    <button id="saveAllBtn" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Salva Tutto
+                    </button>
+                    <a href="index.html" class="btn btn-secondary">
+                        <i class="fas fa-eye"></i> Visualizza Sito
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <div class="admin-sidebar">
+                <nav class="admin-nav">
+                    <h3>Gestione Prodotti</h3>
+                    <ul id="productNav">
+                        <!-- Product navigation will be populated by JavaScript -->
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="admin-content">
+                <div class="content-header">
+                    <h2 id="currentProductTitle">Seleziona un prodotto</h2>
+                    <div class="content-actions">
+                        <button id="previewBtn" class="btn btn-outline" disabled>
+                            <i class="fas fa-eye"></i> Anteprima
+                        </button>
+                        <button id="resetBtn" class="btn btn-outline" disabled>
+                            <i class="fas fa-undo"></i> Ripristina
+                        </button>
+                    </div>
+                </div>
+
+                <div id="productEditor" class="product-editor" style="display: none;">
+                    <div class="editor-grid">
+                        <!-- Basic Info Section -->
+                        <div class="editor-section">
+                            <h3><i class="fas fa-info-circle"></i> Informazioni Base</h3>
+                            <div class="form-group">
+                                <label for="productTitle">Titolo Prodotto</label>
+                                <input type="text" id="productTitle" class="form-input" placeholder="Nome del prodotto">
+                            </div>
+                            <div class="form-group">
+                                <label for="productType">Tipo/Sottotitolo</label>
+                                <input type="text" id="productType" class="form-input" placeholder="Descrizione breve">
+                            </div>
+                            <div class="form-group">
+                                <label for="productPrice">Prezzo</label>
+                                <input type="text" id="productPrice" class="form-input" placeholder="€25,00/Kg">
+                            </div>
+                            <div class="form-group">
+                                <label for="productBadge">Badge</label>
+                                <select id="productBadge" class="form-select">
+                                    <option value="SELVATICA">SELVATICA</option>
+                                    <option value="ALLEVAMENTO">ALLEVAMENTO</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Image Section -->
+                        <div class="editor-section">
+                            <h3><i class="fas fa-image"></i> Immagine Prodotto</h3>
+                            <div class="image-upload-area">
+                                <div class="current-image">
+                                    <img id="currentImage" src="/placeholder.svg" alt="Immagine corrente" style="display: none;">
+                                    <div id="noImagePlaceholder" class="no-image">
+                                        <i class="fas fa-image"></i>
+                                        <p>Nessuna immagine</p>
+                                    </div>
+                                </div>
+                                <div class="image-controls">
+                                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                                    <button type="button" onclick="document.getElementById('imageUpload').click()" class="btn btn-outline">
+                                        <i class="fas fa-upload"></i> Carica Nuova
+                                    </button>
+                                    <div class="form-group">
+                                        <label for="imageUrl">O inserisci URL immagine</label>
+                                        <input type="url" id="imageUrl" class="form-input" placeholder="https://esempio.com/immagine.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Description Section -->
+                        <div class="editor-section full-width">
+                            <h3><i class="fas fa-align-left"></i> Descrizione</h3>
+                            <div class="form-group">
+                                <textarea id="productDescription" class="form-textarea" rows="4" placeholder="Descrizione dettagliata del prodotto"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Features Section -->
+                        <div class="editor-section">
+                            <h3><i class="fas fa-star"></i> Caratteristiche</h3>
+                            <div id="featuresContainer">
+                                <!-- Features will be populated dynamically -->
+                            </div>
+                            <button type="button" id="addFeatureBtn" class="btn btn-outline btn-small">
+                                <i class="fas fa-plus"></i> Aggiungi Caratteristica
+                            </button>
+                        </div>
+
+                        <!-- Specifications Section -->
+                        <div class="editor-section">
+                            <h3><i class="fas fa-list"></i> Specifiche</h3>
+                            <div id="specsContainer">
+                                <!-- Specs will be populated dynamically -->
+                            </div>
+                            <button type="button" id="addSpecBtn" class="btn btn-outline btn-small">
+                                <i class="fas fa-plus"></i> Aggiungi Specifica
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="editor-actions">
+                        <button id="saveProductBtn" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Salva Prodotto
+                        </button>
+                        <button id="cancelBtn" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Annulla
+                        </button>
+                    </div>
+                </div>
+
+                <div id="welcomeMessage" class="welcome-message">
+                    <div class="welcome-content">
+                        <i class="fas fa-fish"></i>
+                        <h2>Benvenuto nel Pannello Admin</h2>
+                        <p>Seleziona un prodotto dalla barra laterale per iniziare a modificarlo.</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="stat-number" id="totalProducts">6</span>
+                                <span class="stat-label">Prodotti Totali</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" id="lastModified">--</span>
+                                <span class="stat-label">Ultima Modifica</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Anteprima Prodotto</h3>
+                <button id="closePreview" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="previewContent" class="product-card">
+                    <!-- Preview content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="messageContainer" class="message-container"></div>
+
+    <script src="./js/admin.js"></script>
+</body>
+</html>
